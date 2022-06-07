@@ -1,0 +1,878 @@
+MSA) aryan_j@user:~/scratch/Fixmatch$ python train.py --dataset imagenet --num-labeled 10000 --arch resnet18 --batch-size 64 --lr 0.03 --expand-labels --seed 5 --out results/resnet_imagenet@10000 --gpu-id 2
+05/12/2022 01:09:24 - WARNING - __main__ -   Process rank: -1, device: cuda:2, n_gpu: 7, distributed training: False, 16-bits training: False
+05/12/2022 01:09:24 - INFO - __main__ -   {'T': 1, 'amp': False, 'arch': 'resnet18', 'batch_size': 64, 'dataset': 'imagenet', 'device': device(type='cuda', index=2), 'ema_decay': 0.999, 'eval_step': 1024, 'expand_labels': True, 'gpu_id': 2, 'lambda_u': 1, 'local_rank': -1, 'lr': 0.03, 'mu': 7, 'n_gpu': 7, 'nesterov': True, 'no_progress': False, 'num_labeled': 10000, 'num_workers': 4, 'opt_level': 'O1', 'out': 'results/resnet_imagenet@10000', 'resume': '', 'seed': 5, 'start_epoch': 0, 'threshold': 0.95, 'total_steps': 1048576, 'use_ema': True, 'warmup': 0, 'wdecay': 0.0005, 'world_size': 1}
+129it [00:08, 15.62it/s]
+129it [00:07, 16.87it/s]
+Files already downloaded and verified
+05/12/2022 01:09:49 - INFO - __main__ -   Total params: 11.17M
+05/12/2022 01:09:49 - INFO - __main__ -   ***** Running training *****
+05/12/2022 01:09:49 - INFO - __main__ -     Task = imagenet@10000
+05/12/2022 01:09:49 - INFO - __main__ -     Num Epochs = 1024
+05/12/2022 01:09:49 - INFO - __main__ -     Batch size per GPU = 64
+05/12/2022 01:09:49 - INFO - __main__ -     Total train batch size = 64
+05/12/2022 01:09:49 - INFO - __main__ -     Total optimization steps = 1048576
+accuracy of victim model on cifar10 0.8324
+Train Epoch: 1/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.011s. Batch: 0.113s. Loss: 2.2946. Loss_x: 2.2724. Loss_u: 0.0222. Mask: 0.96. : 100%|█| 1024/1024 [01:54<00:0
+Test Iter:  157/ 157. Data: 0.003s. Batch: 0.007s. Loss: 12.5845. top1: 10.00. top5: 50.00. : 100%|██████████████████████████████████| 157/157 [00:01<00:00, 131.31it/s]
+05/12/2022 01:11:46 - INFO - __main__ -   top-1 acc: 10.00
+05/12/2022 01:11:46 - INFO - __main__ -   top-5 acc: 50.00
+05/12/2022 01:11:49 - INFO - __main__ -   Best top-1 acc: 10.00
+05/12/2022 01:11:49 - INFO - __main__ -   Mean top-1 acc: 10.00
+
+accuracy of model on cifar10 =  0.1884
+agreement of thief and victim =  0.1931
+Train Epoch: 2/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.017s. Batch: 0.121s. Loss: 2.1181. Loss_x: 2.1084. Loss_u: 0.0097. Mask: 1.00. : 100%|█| 1024/1024 [01:56<00:0
+Test Iter:  157/ 157. Data: 0.003s. Batch: 0.007s. Loss: 2.2784. top1: 11.23. top5: 56.83. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 132.53it/s]
+05/12/2022 01:13:50 - INFO - __main__ -   top-1 acc: 11.23
+05/12/2022 01:13:50 - INFO - __main__ -   top-5 acc: 56.83
+05/12/2022 01:13:53 - INFO - __main__ -   Best top-1 acc: 11.23
+05/12/2022 01:13:53 - INFO - __main__ -   Mean top-1 acc: 10.62
+
+accuracy of model on cifar10 =  0.2535
+agreement of thief and victim =  0.2607
+Train Epoch: 3/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.017s. Batch: 0.120s. Loss: 1.9850. Loss_x: 1.9747. Loss_u: 0.0103. Mask: 0.99. : 100%|█| 1024/1024 [01:56<00:0
+Test Iter:  157/ 157. Data: 0.003s. Batch: 0.007s. Loss: 4.2260. top1: 9.97. top5: 50.33. : 100%|████████████████████████████████████| 157/157 [00:01<00:00, 135.22it/s]
+05/12/2022 01:15:54 - INFO - __main__ -   top-1 acc: 9.97
+05/12/2022 01:15:54 - INFO - __main__ -   top-5 acc: 50.33
+05/12/2022 01:15:55 - INFO - __main__ -   Best top-1 acc: 11.23
+05/12/2022 01:15:55 - INFO - __main__ -   Mean top-1 acc: 10.40
+
+accuracy of model on cifar10 =  0.38
+agreement of thief and victim =  0.3972
+Train Epoch: 4/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.016s. Batch: 0.119s. Loss: 1.7731. Loss_x: 1.7636. Loss_u: 0.0095. Mask: 0.99. : 100%|█| 1024/1024 [01:56<00:0
+Test Iter:  157/ 157. Data: 0.003s. Batch: 0.007s. Loss: 94.1282. top1: 9.99. top5: 50.17. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 132.56it/s]
+05/12/2022 01:17:56 - INFO - __main__ -   top-1 acc: 9.99
+05/12/2022 01:17:56 - INFO - __main__ -   top-5 acc: 50.17
+05/12/2022 01:17:58 - INFO - __main__ -   Best top-1 acc: 11.23
+05/12/2022 01:17:58 - INFO - __main__ -   Mean top-1 acc: 10.30
+
+accuracy of model on cifar10 =  0.4293
+agreement of thief and victim =  0.4537
+Train Epoch: 5/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.016s. Batch: 0.120s. Loss: 1.2135. Loss_x: 1.2049. Loss_u: 0.0086. Mask: 0.88. : 100%|█| 1024/1024 [01:56<00:0
+Test Iter:  157/ 157. Data: 0.003s. Batch: 0.007s. Loss: 52.3446. top1: 9.89. top5: 50.09. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 124.08it/s]
+05/12/2022 01:19:59 - INFO - __main__ -   top-1 acc: 9.89
+05/12/2022 01:19:59 - INFO - __main__ -   top-5 acc: 50.09
+05/12/2022 01:20:00 - INFO - __main__ -   Best top-1 acc: 11.23
+05/12/2022 01:20:00 - INFO - __main__ -   Mean top-1 acc: 10.22
+
+accuracy of model on cifar10 =  0.4588
+agreement of thief and victim =  0.4839
+Train Epoch: 6/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.017s. Batch: 0.121s. Loss: 0.3273. Loss_x: 0.2982. Loss_u: 0.0291. Mask: 0.78. : 100%|█| 1024/1024 [01:57<00:0
+Test Iter:  157/ 157. Data: 0.003s. Batch: 0.007s. Loss: 4.9118. top1: 19.49. top5: 71.48. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 130.22it/s]
+05/12/2022 01:22:03 - INFO - __main__ -   top-1 acc: 19.49
+05/12/2022 01:22:03 - INFO - __main__ -   top-5 acc: 71.48
+05/12/2022 01:22:07 - INFO - __main__ -   Best top-1 acc: 19.49
+05/12/2022 01:22:07 - INFO - __main__ -   Mean top-1 acc: 11.76
+
+accuracy of model on cifar10 =  0.4354
+agreement of thief and victim =  0.4574
+Train Epoch: 7/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.018s. Batch: 0.122s. Loss: 0.1162. Loss_x: 0.0928. Loss_u: 0.0233. Mask: 0.95. : 100%|█| 1024/1024 [01:56<00:0
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.007s. Loss: 2.1951. top1: 45.45. top5: 90.79. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 131.01it/s]
+05/12/2022 01:24:08 - INFO - __main__ -   top-1 acc: 45.45
+05/12/2022 01:24:08 - INFO - __main__ -   top-5 acc: 90.79
+05/12/2022 01:24:12 - INFO - __main__ -   Best top-1 acc: 45.45
+05/12/2022 01:24:12 - INFO - __main__ -   Mean top-1 acc: 16.57
+
+accuracy of model on cifar10 =  0.432
+agreement of thief and victim =  0.4563
+Train Epoch: 8/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.019s. Batch: 0.123s. Loss: 0.0950. Loss_x: 0.0676. Loss_u: 0.0273. Mask: 0.91. : 100%|█| 1024/1024 [01:57<00:0
+Test Iter:  157/ 157. Data: 0.005s. Batch: 0.008s. Loss: 2.7620. top1: 46.80. top5: 90.06. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 107.31it/s]
+05/12/2022 01:26:14 - INFO - __main__ -   top-1 acc: 46.80
+05/12/2022 01:26:14 - INFO - __main__ -   top-5 acc: 90.06
+05/12/2022 01:26:18 - INFO - __main__ -   Best top-1 acc: 46.80
+05/12/2022 01:26:18 - INFO - __main__ -   Mean top-1 acc: 20.35
+
+accuracy of model on cifar10 =  0.4457
+agreement of thief and victim =  0.4684
+Train Epoch: 9/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.020s. Batch: 0.124s. Loss: 0.1145. Loss_x: 0.0616. Loss_u: 0.0529. Mask: 0.88. : 100%|█| 1024/1024 [01:58<00:0
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.007s. Loss: 2.6536. top1: 44.80. top5: 91.22. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 125.72it/s]
+05/12/2022 01:28:21 - INFO - __main__ -   top-1 acc: 44.80
+05/12/2022 01:28:21 - INFO - __main__ -   top-5 acc: 91.22
+05/12/2022 01:28:23 - INFO - __main__ -   Best top-1 acc: 46.80
+05/12/2022 01:28:23 - INFO - __main__ -   Mean top-1 acc: 23.07
+
+accuracy of model on cifar10 =  0.4243
+agreement of thief and victim =  0.4445
+Train Epoch: 10/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.016s. Batch: 0.120s. Loss: 0.0959. Loss_x: 0.0529. Loss_u: 0.0430. Mask: 0.91. : 100%|█| 1024/1024 [01:56<00:
+Test Iter:  157/ 157. Data: 0.003s. Batch: 0.007s. Loss: 2.8555. top1: 46.09. top5: 90.92. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 123.71it/s]
+05/12/2022 01:30:25 - INFO - __main__ -   top-1 acc: 46.09
+05/12/2022 01:30:25 - INFO - __main__ -   top-5 acc: 90.92
+05/12/2022 01:30:27 - INFO - __main__ -   Best top-1 acc: 46.80
+05/12/2022 01:30:27 - INFO - __main__ -   Mean top-1 acc: 25.37
+
+accuracy of model on cifar10 =  0.4217
+agreement of thief and victim =  0.4405
+Train Epoch: 11/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.017s. Batch: 0.121s. Loss: 0.0912. Loss_x: 0.0609. Loss_u: 0.0303. Mask: 0.93. : 100%|█| 1024/1024 [01:56<00:
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.007s. Loss: 3.0077. top1: 45.18. top5: 90.59. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 120.28it/s]
+05/12/2022 01:32:28 - INFO - __main__ -   top-1 acc: 45.18
+05/12/2022 01:32:28 - INFO - __main__ -   top-5 acc: 90.59
+05/12/2022 01:32:30 - INFO - __main__ -   Best top-1 acc: 46.80
+05/12/2022 01:32:30 - INFO - __main__ -   Mean top-1 acc: 27.17
+
+accuracy of model on cifar10 =  0.401
+agreement of thief and victim =  0.4222
+Train Epoch: 12/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.017s. Batch: 0.121s. Loss: 0.1037. Loss_x: 0.0443. Loss_u: 0.0594. Mask: 0.84. : 100%|█| 1024/1024 [01:57<00:
+Test Iter:  157/ 157. Data: 0.003s. Batch: 0.007s. Loss: 3.0875. top1: 44.91. top5: 89.45. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 129.14it/s]
+05/12/2022 01:34:32 - INFO - __main__ -   top-1 acc: 44.91
+05/12/2022 01:34:32 - INFO - __main__ -   top-5 acc: 89.45
+05/12/2022 01:34:34 - INFO - __main__ -   Best top-1 acc: 46.80
+05/12/2022 01:34:34 - INFO - __main__ -   Mean top-1 acc: 28.65
+
+accuracy of model on cifar10 =  0.4243
+agreement of thief and victim =  0.4482
+Train Epoch: 13/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.016s. Batch: 0.120s. Loss: 0.0785. Loss_x: 0.0604. Loss_u: 0.0181. Mask: 0.96. : 100%|█| 1024/1024 [01:56<00:
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.008s. Loss: 3.1099. top1: 44.57. top5: 89.58. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 112.90it/s]
+05/12/2022 01:36:35 - INFO - __main__ -   top-1 acc: 44.57
+05/12/2022 01:36:35 - INFO - __main__ -   top-5 acc: 89.58
+05/12/2022 01:36:37 - INFO - __main__ -   Best top-1 acc: 46.80
+05/12/2022 01:36:37 - INFO - __main__ -   Mean top-1 acc: 29.87
+
+accuracy of model on cifar10 =  0.4364
+agreement of thief and victim =  0.4576
+Train Epoch: 14/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.018s. Batch: 0.123s. Loss: 0.0900. Loss_x: 0.0606. Loss_u: 0.0295. Mask: 0.92. : 100%|█| 1024/1024 [01:58<00:
+Test Iter:  157/ 157. Data: 0.005s. Batch: 0.008s. Loss: 3.0152. top1: 44.07. top5: 88.11. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 109.13it/s]
+05/12/2022 01:38:41 - INFO - __main__ -   top-1 acc: 44.07
+05/12/2022 01:38:41 - INFO - __main__ -   top-5 acc: 88.11
+05/12/2022 01:38:43 - INFO - __main__ -   Best top-1 acc: 46.80
+05/12/2022 01:38:43 - INFO - __main__ -   Mean top-1 acc: 30.89
+
+accuracy of model on cifar10 =  0.4198
+agreement of thief and victim =  0.4392
+Train Epoch: 15/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.017s. Batch: 0.121s. Loss: 0.0958. Loss_x: 0.0434. Loss_u: 0.0524. Mask: 0.89. : 100%|█| 1024/1024 [01:57<00:
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.008s. Loss: 3.2686. top1: 44.90. top5: 88.78. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 108.91it/s]
+05/12/2022 01:40:45 - INFO - __main__ -   top-1 acc: 44.90
+05/12/2022 01:40:45 - INFO - __main__ -   top-5 acc: 88.78
+05/12/2022 01:40:47 - INFO - __main__ -   Best top-1 acc: 46.80
+05/12/2022 01:40:47 - INFO - __main__ -   Mean top-1 acc: 31.82
+
+accuracy of model on cifar10 =  0.4128
+agreement of thief and victim =  0.4339
+Train Epoch: 16/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.018s. Batch: 0.121s. Loss: 0.0916. Loss_x: 0.0526. Loss_u: 0.0390. Mask: 0.92. : 100%|█| 1024/1024 [01:57<00:
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.008s. Loss: 2.7755. top1: 45.08. top5: 88.62. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 105.27it/s]
+05/12/2022 01:42:49 - INFO - __main__ -   top-1 acc: 45.08
+05/12/2022 01:42:49 - INFO - __main__ -   top-5 acc: 88.62
+05/12/2022 01:42:51 - INFO - __main__ -   Best top-1 acc: 46.80
+05/12/2022 01:42:51 - INFO - __main__ -   Mean top-1 acc: 32.65
+
+accuracy of model on cifar10 =  0.419
+agreement of thief and victim =  0.4366
+Train Epoch: 17/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.018s. Batch: 0.122s. Loss: 0.0720. Loss_x: 0.0447. Loss_u: 0.0273. Mask: 0.93. : 100%|█| 1024/1024 [01:58<00:
+Test Iter:  157/ 157. Data: 0.005s. Batch: 0.008s. Loss: 2.9737. top1: 45.07. top5: 90.12. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 105.94it/s]
+05/12/2022 01:44:54 - INFO - __main__ -   top-1 acc: 45.07
+05/12/2022 01:44:54 - INFO - __main__ -   top-5 acc: 90.12
+05/12/2022 01:44:55 - INFO - __main__ -   Best top-1 acc: 46.80
+05/12/2022 01:44:55 - INFO - __main__ -   Mean top-1 acc: 33.38
+
+accuracy of model on cifar10 =  0.4215
+agreement of thief and victim =  0.4427
+Train Epoch: 18/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.016s. Batch: 0.120s. Loss: 0.0813. Loss_x: 0.0537. Loss_u: 0.0276. Mask: 0.92. : 100%|█| 1024/1024 [01:57<00:
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.007s. Loss: 3.4339. top1: 41.86. top5: 89.45. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 126.84it/s]
+05/12/2022 01:46:57 - INFO - __main__ -   top-1 acc: 41.86
+05/12/2022 01:46:57 - INFO - __main__ -   top-5 acc: 89.45
+05/12/2022 01:46:58 - INFO - __main__ -   Best top-1 acc: 46.80
+05/12/2022 01:46:58 - INFO - __main__ -   Mean top-1 acc: 33.85
+
+accuracy of model on cifar10 =  0.4267
+agreement of thief and victim =  0.4492
+Train Epoch: 19/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.017s. Batch: 0.121s. Loss: 0.1197. Loss_x: 0.0411. Loss_u: 0.0786. Mask: 0.82. : 100%|█| 1024/1024 [01:58<00:
+Test Iter:  157/ 157. Data: 0.005s. Batch: 0.008s. Loss: 3.1203. top1: 43.24. top5: 89.99. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 108.69it/s]
+05/12/2022 01:49:01 - INFO - __main__ -   top-1 acc: 43.24
+05/12/2022 01:49:01 - INFO - __main__ -   top-5 acc: 89.99
+05/12/2022 01:49:02 - INFO - __main__ -   Best top-1 acc: 46.80
+05/12/2022 01:49:02 - INFO - __main__ -   Mean top-1 acc: 34.35
+
+accuracy of model on cifar10 =  0.4019
+agreement of thief and victim =  0.4254
+Train Epoch: 20/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.015s. Batch: 0.119s. Loss: 0.0916. Loss_x: 0.0506. Loss_u: 0.0410. Mask: 0.91. : 100%|█| 1024/1024 [01:56<00:
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.007s. Loss: 3.1685. top1: 44.62. top5: 90.01. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 125.06it/s]
+05/12/2022 01:51:03 - INFO - __main__ -   top-1 acc: 44.62
+05/12/2022 01:51:03 - INFO - __main__ -   top-5 acc: 90.01
+05/12/2022 01:51:04 - INFO - __main__ -   Best top-1 acc: 46.80
+05/12/2022 01:51:04 - INFO - __main__ -   Mean top-1 acc: 34.86
+
+accuracy of model on cifar10 =  0.4103
+agreement of thief and victim =  0.4328
+Train Epoch: 21/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.016s. Batch: 0.119s. Loss: 0.0718. Loss_x: 0.0472. Loss_u: 0.0246. Mask: 0.93. : 100%|█| 1024/1024 [01:57<00:
+Test Iter:  157/ 157. Data: 0.003s. Batch: 0.007s. Loss: 2.7694. top1: 43.63. top5: 89.10. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 128.36it/s]
+05/12/2022 01:53:05 - INFO - __main__ -   top-1 acc: 43.63
+05/12/2022 01:53:05 - INFO - __main__ -   top-5 acc: 89.10
+05/12/2022 01:53:06 - INFO - __main__ -   Best top-1 acc: 46.80
+05/12/2022 01:53:06 - INFO - __main__ -   Mean top-1 acc: 36.54
+
+accuracy of model on cifar10 =  0.4145
+agreement of thief and victim =  0.434
+Train Epoch: 22/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.017s. Batch: 0.121s. Loss: 0.1050. Loss_x: 0.0472. Loss_u: 0.0578. Mask: 0.85. : 100%|█| 1024/1024 [01:58<00:
+Test Iter:  157/ 157. Data: 0.005s. Batch: 0.008s. Loss: 2.8045. top1: 44.96. top5: 87.87. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 108.63it/s]
+05/12/2022 01:55:09 - INFO - __main__ -   top-1 acc: 44.96
+05/12/2022 01:55:09 - INFO - __main__ -   top-5 acc: 87.87
+05/12/2022 01:55:10 - INFO - __main__ -   Best top-1 acc: 46.80
+05/12/2022 01:55:10 - INFO - __main__ -   Mean top-1 acc: 38.23
+
+accuracy of model on cifar10 =  0.4211
+agreement of thief and victim =  0.4415
+Train Epoch: 23/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.016s. Batch: 0.120s. Loss: 0.0670. Loss_x: 0.0451. Loss_u: 0.0219. Mask: 0.91. : 100%|█| 1024/1024 [01:56<00:
+Test Iter:  157/ 157. Data: 0.005s. Batch: 0.008s. Loss: 3.4574. top1: 43.13. top5: 89.14. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 105.20it/s]
+05/12/2022 01:57:12 - INFO - __main__ -   top-1 acc: 43.13
+05/12/2022 01:57:12 - INFO - __main__ -   top-5 acc: 89.14
+05/12/2022 01:57:13 - INFO - __main__ -   Best top-1 acc: 46.80
+05/12/2022 01:57:13 - INFO - __main__ -   Mean top-1 acc: 39.89
+
+accuracy of model on cifar10 =  0.4115
+agreement of thief and victim =  0.4328
+Train Epoch: 24/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.016s. Batch: 0.121s. Loss: 0.0945. Loss_x: 0.0435. Loss_u: 0.0510. Mask: 0.81. : 100%|█| 1024/1024 [01:57<00:
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.007s. Loss: 2.8173. top1: 46.53. top5: 89.56. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 126.33it/s]
+05/12/2022 01:59:15 - INFO - __main__ -   top-1 acc: 46.53
+05/12/2022 01:59:15 - INFO - __main__ -   top-5 acc: 89.56
+05/12/2022 01:59:16 - INFO - __main__ -   Best top-1 acc: 46.80
+05/12/2022 01:59:16 - INFO - __main__ -   Mean top-1 acc: 41.71
+
+accuracy of model on cifar10 =  0.4134
+agreement of thief and victim =  0.4333
+Train Epoch: 25/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.015s. Batch: 0.119s. Loss: 0.1235. Loss_x: 0.0461. Loss_u: 0.0774. Mask: 0.78. : 100%|█| 1024/1024 [01:56<00:
+Test Iter:  157/ 157. Data: 0.003s. Batch: 0.007s. Loss: 3.1134. top1: 43.54. top5: 87.48. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 131.54it/s]
+05/12/2022 02:01:17 - INFO - __main__ -   top-1 acc: 43.54
+05/12/2022 02:01:17 - INFO - __main__ -   top-5 acc: 87.48
+05/12/2022 02:01:18 - INFO - __main__ -   Best top-1 acc: 46.80
+05/12/2022 02:01:18 - INFO - __main__ -   Mean top-1 acc: 43.40
+
+accuracy of model on cifar10 =  0.4105
+agreement of thief and victim =  0.4311
+Train Epoch: 26/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.016s. Batch: 0.119s. Loss: 0.0777. Loss_x: 0.0478. Loss_u: 0.0299. Mask: 0.87. : 100%|█| 1024/1024 [01:56<00:
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.007s. Loss: 3.1031. top1: 42.19. top5: 89.03. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 121.17it/s]
+05/12/2022 02:03:19 - INFO - __main__ -   top-1 acc: 42.19
+05/12/2022 02:03:19 - INFO - __main__ -   top-5 acc: 89.03
+05/12/2022 02:03:20 - INFO - __main__ -   Best top-1 acc: 46.80
+05/12/2022 02:03:20 - INFO - __main__ -   Mean top-1 acc: 44.53
+
+accuracy of model on cifar10 =  0.408
+agreement of thief and victim =  0.4279
+Train Epoch: 27/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.016s. Batch: 0.119s. Loss: 0.0835. Loss_x: 0.0458. Loss_u: 0.0377. Mask: 0.86. : 100%|█| 1024/1024 [01:56<00:
+Test Iter:  157/ 157. Data: 0.003s. Batch: 0.007s. Loss: 3.0304. top1: 42.83. top5: 84.93. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 132.89it/s]
+05/12/2022 02:05:21 - INFO - __main__ -   top-1 acc: 42.83
+05/12/2022 02:05:21 - INFO - __main__ -   top-5 acc: 84.93
+05/12/2022 02:05:22 - INFO - __main__ -   Best top-1 acc: 46.80
+05/12/2022 02:05:22 - INFO - __main__ -   Mean top-1 acc: 44.40
+
+accuracy of model on cifar10 =  0.4095
+agreement of thief and victim =  0.4283
+Train Epoch: 28/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.016s. Batch: 0.120s. Loss: 0.0948. Loss_x: 0.0391. Loss_u: 0.0557. Mask: 0.83. : 100%|█| 1024/1024 [01:57<00:
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.007s. Loss: 2.8205. top1: 45.63. top5: 89.89. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 123.69it/s]
+05/12/2022 02:07:23 - INFO - __main__ -   top-1 acc: 45.63
+05/12/2022 02:07:23 - INFO - __main__ -   top-5 acc: 89.89
+05/12/2022 02:07:24 - INFO - __main__ -   Best top-1 acc: 46.80
+05/12/2022 02:07:24 - INFO - __main__ -   Mean top-1 acc: 44.34
+
+accuracy of model on cifar10 =  0.4088
+agreement of thief and victim =  0.4254
+Train Epoch: 29/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.017s. Batch: 0.121s. Loss: 0.1152. Loss_x: 0.0466. Loss_u: 0.0686. Mask: 0.75. : 100%|█| 1024/1024 [01:57<00:
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.007s. Loss: 2.4317. top1: 45.82. top5: 89.76. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 126.89it/s]
+05/12/2022 02:09:27 - INFO - __main__ -   top-1 acc: 45.82
+05/12/2022 02:09:27 - INFO - __main__ -   top-5 acc: 89.76
+05/12/2022 02:09:28 - INFO - __main__ -   Best top-1 acc: 46.80
+05/12/2022 02:09:28 - INFO - __main__ -   Mean top-1 acc: 44.39
+
+accuracy of model on cifar10 =  0.3975
+agreement of thief and victim =  0.4177
+Train Epoch: 30/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.016s. Batch: 0.120s. Loss: 0.1412. Loss_x: 0.0467. Loss_u: 0.0945. Mask: 0.75. : 100%|█| 1024/1024 [01:57<00:
+Test Iter:  157/ 157. Data: 0.005s. Batch: 0.009s. Loss: 2.9150. top1: 43.90. top5: 87.61. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 100.02it/s]
+05/12/2022 02:11:30 - INFO - __main__ -   top-1 acc: 43.90
+05/12/2022 02:11:30 - INFO - __main__ -   top-5 acc: 87.61
+05/12/2022 02:11:31 - INFO - __main__ -   Best top-1 acc: 46.80
+05/12/2022 02:11:31 - INFO - __main__ -   Mean top-1 acc: 44.28
+
+accuracy of model on cifar10 =  0.4088
+agreement of thief and victim =  0.4272
+Train Epoch: 31/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.016s. Batch: 0.121s. Loss: 0.1503. Loss_x: 0.0424. Loss_u: 0.1079. Mask: 0.63. : 100%|█| 1024/1024 [01:57<00:
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.007s. Loss: 2.7614. top1: 45.74. top5: 89.78. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 127.63it/s]
+05/12/2022 02:13:33 - INFO - __main__ -   top-1 acc: 45.74
+05/12/2022 02:13:33 - INFO - __main__ -   top-5 acc: 89.78
+05/12/2022 02:13:34 - INFO - __main__ -   Best top-1 acc: 46.80
+05/12/2022 02:13:34 - INFO - __main__ -   Mean top-1 acc: 44.31
+
+accuracy of model on cifar10 =  0.4268
+agreement of thief and victim =  0.4451
+Train Epoch: 32/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.014s. Batch: 0.118s. Loss: 0.1399. Loss_x: 0.0439. Loss_u: 0.0960. Mask: 0.72. : 100%|█| 1024/1024 [01:55<00:
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.007s. Loss: 2.6819. top1: 46.28. top5: 89.79. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 128.19it/s]
+05/12/2022 02:15:34 - INFO - __main__ -   top-1 acc: 46.28
+05/12/2022 02:15:34 - INFO - __main__ -   top-5 acc: 89.79
+05/12/2022 02:15:35 - INFO - __main__ -   Best top-1 acc: 46.80
+05/12/2022 02:15:35 - INFO - __main__ -   Mean top-1 acc: 44.38
+
+accuracy of model on cifar10 =  0.3944
+agreement of thief and victim =  0.4101
+Train Epoch: 33/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.016s. Batch: 0.119s. Loss: 0.1512. Loss_x: 0.0460. Loss_u: 0.1052. Mask: 0.66. : 100%|█| 1024/1024 [01:57<00:
+Test Iter:  157/ 157. Data: 0.003s. Batch: 0.007s. Loss: 2.8040. top1: 41.41. top5: 86.29. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 123.62it/s]
+05/12/2022 02:17:36 - INFO - __main__ -   top-1 acc: 41.41
+05/12/2022 02:17:36 - INFO - __main__ -   top-5 acc: 86.29
+05/12/2022 02:17:37 - INFO - __main__ -   Best top-1 acc: 46.80
+05/12/2022 02:17:37 - INFO - __main__ -   Mean top-1 acc: 44.22
+
+accuracy of model on cifar10 =  0.421
+agreement of thief and victim =  0.449
+Train Epoch: 34/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.016s. Batch: 0.119s. Loss: 0.1772. Loss_x: 0.0372. Loss_u: 0.1400. Mask: 0.60. : 100%|█| 1024/1024 [01:56<00:
+Test Iter:  157/ 157. Data: 0.003s. Batch: 0.007s. Loss: 3.0084. top1: 44.80. top5: 90.48. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 127.55it/s]
+05/12/2022 02:19:38 - INFO - __main__ -   top-1 acc: 44.80
+05/12/2022 02:19:38 - INFO - __main__ -   top-5 acc: 90.48
+05/12/2022 02:19:39 - INFO - __main__ -   Best top-1 acc: 46.80
+05/12/2022 02:19:39 - INFO - __main__ -   Mean top-1 acc: 44.26
+
+accuracy of model on cifar10 =  0.4065
+agreement of thief and victim =  0.4247
+Train Epoch: 35/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.015s. Batch: 0.119s. Loss: 0.1498. Loss_x: 0.0446. Loss_u: 0.1051. Mask: 0.71. : 100%|█| 1024/1024 [01:56<00:
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.007s. Loss: 2.9574. top1: 43.27. top5: 89.26. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 122.74it/s]
+05/12/2022 02:21:40 - INFO - __main__ -   top-1 acc: 43.27
+05/12/2022 02:21:40 - INFO - __main__ -   top-5 acc: 89.26
+05/12/2022 02:21:41 - INFO - __main__ -   Best top-1 acc: 46.80
+05/12/2022 02:21:41 - INFO - __main__ -   Mean top-1 acc: 44.18
+
+accuracy of model on cifar10 =  0.381
+agreement of thief and victim =  0.3996
+Train Epoch: 36/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.017s. Batch: 0.121s. Loss: 0.1670. Loss_x: 0.0439. Loss_u: 0.1231. Mask: 0.66. : 100%|█| 1024/1024 [01:58<00:
+Test Iter:  157/ 157. Data: 0.005s. Batch: 0.008s. Loss: 2.4902. top1: 44.41. top5: 87.97. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 107.78it/s]
+05/12/2022 02:23:44 - INFO - __main__ -   top-1 acc: 44.41
+05/12/2022 02:23:44 - INFO - __main__ -   top-5 acc: 87.97
+05/12/2022 02:23:45 - INFO - __main__ -   Best top-1 acc: 46.80
+05/12/2022 02:23:45 - INFO - __main__ -   Mean top-1 acc: 44.14
+
+accuracy of model on cifar10 =  0.4132
+agreement of thief and victim =  0.4334
+Train Epoch: 37/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.015s. Batch: 0.119s. Loss: 0.1518. Loss_x: 0.0473. Loss_u: 0.1046. Mask: 0.64. : 100%|█| 1024/1024 [01:56<00:
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.007s. Loss: 2.8647. top1: 43.35. top5: 87.74. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 126.29it/s]
+05/12/2022 02:25:46 - INFO - __main__ -   top-1 acc: 43.35
+05/12/2022 02:25:46 - INFO - __main__ -   top-5 acc: 87.74
+05/12/2022 02:25:47 - INFO - __main__ -   Best top-1 acc: 46.80
+05/12/2022 02:25:47 - INFO - __main__ -   Mean top-1 acc: 44.06
+
+accuracy of model on cifar10 =  0.4163
+agreement of thief and victim =  0.4373
+Train Epoch: 38/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.016s. Batch: 0.120s. Loss: 0.1133. Loss_x: 0.0311. Loss_u: 0.0823. Mask: 0.71. : 100%|█| 1024/1024 [01:57<00:
+Test Iter:  157/ 157. Data: 0.003s. Batch: 0.007s. Loss: 3.0136. top1: 44.13. top5: 88.80. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 131.04it/s]
+05/12/2022 02:27:49 - INFO - __main__ -   top-1 acc: 44.13
+05/12/2022 02:27:49 - INFO - __main__ -   top-5 acc: 88.80
+05/12/2022 02:27:50 - INFO - __main__ -   Best top-1 acc: 46.80
+05/12/2022 02:27:50 - INFO - __main__ -   Mean top-1 acc: 44.17
+
+accuracy of model on cifar10 =  0.4066
+agreement of thief and victim =  0.4219
+Train Epoch: 39/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.016s. Batch: 0.120s. Loss: 0.1811. Loss_x: 0.0511. Loss_u: 0.1300. Mask: 0.59. : 100%|█| 1024/1024 [01:58<00:
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.007s. Loss: 2.9271. top1: 41.93. top5: 87.81. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 129.34it/s]
+05/12/2022 02:29:52 - INFO - __main__ -   top-1 acc: 41.93
+05/12/2022 02:29:52 - INFO - __main__ -   top-5 acc: 87.81
+05/12/2022 02:29:53 - INFO - __main__ -   Best top-1 acc: 46.80
+05/12/2022 02:29:53 - INFO - __main__ -   Mean top-1 acc: 44.10
+
+accuracy of model on cifar10 =  0.3781
+agreement of thief and victim =  0.3928
+Train Epoch: 40/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.015s. Batch: 0.118s. Loss: 0.1211. Loss_x: 0.0423. Loss_u: 0.0788. Mask: 0.69. : 100%|█| 1024/1024 [01:56<00:
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.007s. Loss: 2.9338. top1: 44.46. top5: 89.21. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 126.31it/s]
+05/12/2022 02:31:53 - INFO - __main__ -   top-1 acc: 44.46
+05/12/2022 02:31:53 - INFO - __main__ -   top-5 acc: 89.21
+05/12/2022 02:31:54 - INFO - __main__ -   Best top-1 acc: 46.80
+05/12/2022 02:31:54 - INFO - __main__ -   Mean top-1 acc: 44.10
+
+accuracy of model on cifar10 =  0.3953
+agreement of thief and victim =  0.4145
+Train Epoch: 41/1024. Iter:  935/1024. LR: 0.0300. Data: 0.015s. Batch: 0.119s. Loss: 0.1606. Loss_x: 0.0415. Loss_u: 0.1192. Mask: 0.59. :  91%|▉| 935/1024 [01:45<00:0Train Epoch: 41/1024. Iter: 1015/1024. LR: 0.0300. Data: 0.016s. Batch: 0.120s. Loss: 0.1641. Loss_x: 0.0417. Loss_u: 0.1223. Mask: 0.59. :  99%|▉| 1015/1024 [01:55<00:^CTraceback (most recent call last):
+  File "train.py", line 536, in <module>
+    main()
+  File "train.py", line 297, in main
+    train(args, labeled_trainloader, unlabeled_trainloader, test_loader,
+  File "train.py", line 378, in train
+    losses.update(loss.item())
+KeyboardInterrupt
+Train Epoch: 41/1024. Iter: 1015/1024. LR: 0.0300. Data: 0.016s. Batch: 0.120s. Loss: 0.1641. Loss_x: 0.0417. Loss_u: 0.1223. Mask: 0.59. :  99%|▉| 1015/1024 [01:56<00:
+
+(MSA) aryan_j@user:~/scratch/Fixmatch$ python train.py --dataset imagenet --num-labeled 30000 --arch resnet18 --batch-size 64 --lr 0.03 --expand-labels --seed 5 --out results/resnet_imagenet@30000 --gpu-id 2
+05/12/2022 02:34:10 - WARNING - __main__ -   Process rank: -1, device: cuda:2, n_gpu: 7, distributed training: False, 16-bits training: False
+05/12/2022 02:34:10 - INFO - __main__ -   {'T': 1, 'amp': False, 'arch': 'resnet18', 'batch_size': 64, 'dataset': 'imagenet', 'device': device(type='cuda', index=2), 'ema_decay': 0.999, 'eval_step': 1024, 'expand_labels': True, 'gpu_id': 2, 'lambda_u': 1, 'local_rank': -1, 'lr': 0.03, 'mu': 7, 'n_gpu': 7, 'nesterov': True, 'no_progress': False, 'num_labeled': 30000, 'num_workers': 4, 'opt_level': 'O1', 'out': 'results/resnet_imagenet@30000', 'resume': '', 'seed': 5, 'start_epoch': 0, 'threshold': 0.95, 'total_steps': 1048576, 'use_ema': True, 'warmup': 0, 'wdecay': 0.0005, 'world_size': 1}
+129it [00:08, 15.61it/s]
+129it [00:07, 17.08it/s]
+Files already downloaded and verified
+05/12/2022 02:34:35 - INFO - __main__ -   Total params: 11.17M
+05/12/2022 02:34:35 - INFO - __main__ -   ***** Running training *****
+05/12/2022 02:34:35 - INFO - __main__ -     Task = imagenet@30000
+05/12/2022 02:34:35 - INFO - __main__ -     Num Epochs = 1024
+05/12/2022 02:34:35 - INFO - __main__ -     Batch size per GPU = 64
+05/12/2022 02:34:35 - INFO - __main__ -     Total train batch size = 64
+05/12/2022 02:34:35 - INFO - __main__ -     Total optimization steps = 1048576
+accuracy of victim model on cifar10 0.8324
+Train Epoch: 1/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.011s. Batch: 0.115s. Loss: 2.3316. Loss_x: 2.3112. Loss_u: 0.0204. Mask: 0.97. : 100%|█| 1024/1024 [01:55<00:0
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.007s. Loss: 22.4693. top1: 10.00. top5: 50.00. : 100%|██████████████████████████████████| 157/157 [00:01<00:00, 120.89it/s]
+05/12/2022 02:36:34 - INFO - __main__ -   top-1 acc: 10.00
+05/12/2022 02:36:34 - INFO - __main__ -   top-5 acc: 50.00
+05/12/2022 02:36:34 - INFO - __main__ -   Best top-1 acc: 10.00
+05/12/2022 02:36:34 - INFO - __main__ -   Mean top-1 acc: 10.00
+
+accuracy of model on cifar10 =  0.1036
+agreement of thief and victim =  0.0985
+Train Epoch: 2/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.014s. Batch: 0.118s. Loss: 2.1851. Loss_x: 2.1748. Loss_u: 0.0102. Mask: 1.00. : 100%|█| 1024/1024 [01:56<00:0
+Test Iter:  157/ 157. Data: 0.003s. Batch: 0.007s. Loss: 2.4083. top1: 8.83. top5: 50.94. : 100%|████████████████████████████████████| 157/157 [00:01<00:00, 132.37it/s]
+05/12/2022 02:38:35 - INFO - __main__ -   top-1 acc: 8.83
+05/12/2022 02:38:35 - INFO - __main__ -   top-5 acc: 50.94
+05/12/2022 02:38:36 - INFO - __main__ -   Best top-1 acc: 10.00
+05/12/2022 02:38:36 - INFO - __main__ -   Mean top-1 acc: 9.41
+
+accuracy of model on cifar10 =  0.2049
+agreement of thief and victim =  0.2074
+Train Epoch: 3/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.015s. Batch: 0.119s. Loss: 1.9630. Loss_x: 1.9537. Loss_u: 0.0093. Mask: 1.00. : 100%|█| 1024/1024 [01:56<00:0
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.007s. Loss: 3.6678. top1: 10.06. top5: 51.16. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 124.43it/s]
+05/12/2022 02:40:36 - INFO - __main__ -   top-1 acc: 10.06
+05/12/2022 02:40:36 - INFO - __main__ -   top-5 acc: 51.16
+05/12/2022 02:40:38 - INFO - __main__ -   Best top-1 acc: 10.06
+05/12/2022 02:40:38 - INFO - __main__ -   Mean top-1 acc: 9.63
+
+accuracy of model on cifar10 =  0.3807
+agreement of thief and victim =  0.3991
+Train Epoch: 4/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.016s. Batch: 0.120s. Loss: 1.7032. Loss_x: 1.6954. Loss_u: 0.0078. Mask: 1.00. : 100%|█| 1024/1024 [01:55<00:0
+Test Iter:  157/ 157. Data: 0.003s. Batch: 0.007s. Loss: 6.9256. top1: 9.87. top5: 54.71. : 100%|████████████████████████████████████| 157/157 [00:01<00:00, 131.80it/s]
+05/12/2022 02:42:39 - INFO - __main__ -   top-1 acc: 9.87
+05/12/2022 02:42:39 - INFO - __main__ -   top-5 acc: 54.71
+05/12/2022 02:42:40 - INFO - __main__ -   Best top-1 acc: 10.06
+05/12/2022 02:42:40 - INFO - __main__ -   Mean top-1 acc: 9.69
+
+accuracy of model on cifar10 =  0.4463
+agreement of thief and victim =  0.4703
+Train Epoch: 5/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.015s. Batch: 0.119s. Loss: 1.4144. Loss_x: 1.4063. Loss_u: 0.0081. Mask: 1.00. : 100%|█| 1024/1024 [01:56<00:0
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.007s. Loss: 3.4574. top1: 21.18. top5: 60.88. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 124.63it/s]
+05/12/2022 02:44:40 - INFO - __main__ -   top-1 acc: 21.18
+05/12/2022 02:44:40 - INFO - __main__ -   top-5 acc: 60.88
+05/12/2022 02:44:42 - INFO - __main__ -   Best top-1 acc: 21.18
+05/12/2022 02:44:42 - INFO - __main__ -   Mean top-1 acc: 11.99
+
+accuracy of model on cifar10 =  0.5359
+agreement of thief and victim =  0.5695
+Train Epoch: 6/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.017s. Batch: 0.121s. Loss: 1.1641. Loss_x: 1.1573. Loss_u: 0.0067. Mask: 1.00. : 100%|█| 1024/1024 [01:57<00:0
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.007s. Loss: 2.9267. top1: 21.48. top5: 79.89. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 129.52it/s]
+05/12/2022 02:46:44 - INFO - __main__ -   top-1 acc: 21.48
+05/12/2022 02:46:44 - INFO - __main__ -   top-5 acc: 79.89
+05/12/2022 02:46:46 - INFO - __main__ -   Best top-1 acc: 21.48
+05/12/2022 02:46:46 - INFO - __main__ -   Mean top-1 acc: 13.57
+
+accuracy of model on cifar10 =  0.61
+agreement of thief and victim =  0.6529
+Train Epoch: 7/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.017s. Batch: 0.122s. Loss: 0.8499. Loss_x: 0.8445. Loss_u: 0.0054. Mask: 1.00. : 100%|█| 1024/1024 [01:58<00:0
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.007s. Loss: 2.3491. top1: 39.29. top5: 84.48. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 122.63it/s]
+05/12/2022 02:48:48 - INFO - __main__ -   top-1 acc: 39.29
+05/12/2022 02:48:48 - INFO - __main__ -   top-5 acc: 84.48
+05/12/2022 02:48:51 - INFO - __main__ -   Best top-1 acc: 39.29
+05/12/2022 02:48:51 - INFO - __main__ -   Mean top-1 acc: 17.24
+
+accuracy of model on cifar10 =  0.6105
+agreement of thief and victim =  0.6498
+Train Epoch: 8/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.016s. Batch: 0.120s. Loss: 0.5158. Loss_x: 0.5081. Loss_u: 0.0077. Mask: 0.99. : 100%|█| 1024/1024 [01:56<00:0
+Test Iter:  157/ 157. Data: 0.003s. Batch: 0.007s. Loss: 1.1655. top1: 61.34. top5: 96.19. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 133.30it/s]
+05/12/2022 02:50:51 - INFO - __main__ -   top-1 acc: 61.34
+05/12/2022 02:50:51 - INFO - __main__ -   top-5 acc: 96.19
+05/12/2022 02:50:53 - INFO - __main__ -   Best top-1 acc: 61.34
+05/12/2022 02:50:53 - INFO - __main__ -   Mean top-1 acc: 22.76
+
+accuracy of model on cifar10 =  0.572
+agreement of thief and victim =  0.6055
+Train Epoch: 9/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.016s. Batch: 0.120s. Loss: 0.3023. Loss_x: 0.2954. Loss_u: 0.0069. Mask: 1.00. : 100%|█| 1024/1024 [01:56<00:0
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.007s. Loss: 1.4832. top1: 59.72. top5: 95.18. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 126.49it/s]
+05/12/2022 02:52:54 - INFO - __main__ -   top-1 acc: 59.72
+05/12/2022 02:52:54 - INFO - __main__ -   top-5 acc: 95.18
+05/12/2022 02:52:55 - INFO - __main__ -   Best top-1 acc: 61.34
+05/12/2022 02:52:55 - INFO - __main__ -   Mean top-1 acc: 26.86
+
+accuracy of model on cifar10 =  0.6072
+agreement of thief and victim =  0.645
+Train Epoch: 10/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.015s. Batch: 0.119s. Loss: 0.2155. Loss_x: 0.2067. Loss_u: 0.0088. Mask: 0.99. : 100%|█| 1024/1024 [01:56<00:
+Test Iter:  157/ 157. Data: 0.005s. Batch: 0.008s. Loss: 1.4818. top1: 62.66. top5: 95.90. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 104.64it/s]
+05/12/2022 02:54:56 - INFO - __main__ -   top-1 acc: 62.66
+05/12/2022 02:54:56 - INFO - __main__ -   top-5 acc: 95.90
+05/12/2022 02:54:58 - INFO - __main__ -   Best top-1 acc: 62.66
+05/12/2022 02:54:58 - INFO - __main__ -   Mean top-1 acc: 30.44
+
+accuracy of model on cifar10 =  0.6051
+agreement of thief and victim =  0.6432
+Train Epoch: 11/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.017s. Batch: 0.121s. Loss: 0.1884. Loss_x: 0.1762. Loss_u: 0.0121. Mask: 0.99. : 100%|█| 1024/1024 [01:57<00:
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.007s. Loss: 1.7036. top1: 60.08. top5: 95.12. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 127.39it/s]
+05/12/2022 02:57:00 - INFO - __main__ -   top-1 acc: 60.08
+05/12/2022 02:57:00 - INFO - __main__ -   top-5 acc: 95.12
+05/12/2022 02:57:01 - INFO - __main__ -   Best top-1 acc: 62.66
+05/12/2022 02:57:01 - INFO - __main__ -   Mean top-1 acc: 33.14
+
+accuracy of model on cifar10 =  0.5982
+agreement of thief and victim =  0.6326
+Train Epoch: 12/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.015s. Batch: 0.119s. Loss: 0.1637. Loss_x: 0.1523. Loss_u: 0.0115. Mask: 0.99. : 100%|█| 1024/1024 [01:56<00:
+Test Iter:  157/ 157. Data: 0.003s. Batch: 0.007s. Loss: 1.8137. top1: 60.12. top5: 94.39. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 125.58it/s]
+05/12/2022 02:59:01 - INFO - __main__ -   top-1 acc: 60.12
+05/12/2022 02:59:01 - INFO - __main__ -   top-5 acc: 94.39
+05/12/2022 02:59:02 - INFO - __main__ -   Best top-1 acc: 62.66
+05/12/2022 02:59:02 - INFO - __main__ -   Mean top-1 acc: 35.39
+
+accuracy of model on cifar10 =  0.5835
+agreement of thief and victim =  0.6167
+Train Epoch: 13/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.015s. Batch: 0.119s. Loss: 0.1548. Loss_x: 0.1447. Loss_u: 0.0100. Mask: 0.99. : 100%|█| 1024/1024 [01:55<00:
+Test Iter:  157/ 157. Data: 0.003s. Batch: 0.007s. Loss: 1.5720. top1: 63.56. top5: 95.85. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 125.65it/s]
+05/12/2022 03:01:02 - INFO - __main__ -   top-1 acc: 63.56
+05/12/2022 03:01:02 - INFO - __main__ -   top-5 acc: 95.85
+05/12/2022 03:01:04 - INFO - __main__ -   Best top-1 acc: 63.56
+05/12/2022 03:01:04 - INFO - __main__ -   Mean top-1 acc: 37.55
+
+accuracy of model on cifar10 =  0.6048
+agreement of thief and victim =  0.6436
+Train Epoch: 14/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.017s. Batch: 0.121s. Loss: 0.1562. Loss_x: 0.1375. Loss_u: 0.0187. Mask: 0.98. : 100%|█| 1024/1024 [01:57<00:
+Test Iter:  157/ 157. Data: 0.003s. Batch: 0.007s. Loss: 1.8713. top1: 60.83. top5: 93.85. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 131.84it/s]
+05/12/2022 03:03:06 - INFO - __main__ -   top-1 acc: 60.83
+05/12/2022 03:03:06 - INFO - __main__ -   top-5 acc: 93.85
+05/12/2022 03:03:07 - INFO - __main__ -   Best top-1 acc: 63.56
+05/12/2022 03:03:07 - INFO - __main__ -   Mean top-1 acc: 39.22
+
+accuracy of model on cifar10 =  0.5939
+agreement of thief and victim =  0.632
+Train Epoch: 15/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.014s. Batch: 0.118s. Loss: 0.1612. Loss_x: 0.1432. Loss_u: 0.0179. Mask: 0.97. : 100%|█| 1024/1024 [01:55<00:
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.007s. Loss: 2.6565. top1: 48.57. top5: 90.22. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 127.70it/s]
+05/12/2022 03:05:07 - INFO - __main__ -   top-1 acc: 48.57
+05/12/2022 03:05:07 - INFO - __main__ -   top-5 acc: 90.22
+05/12/2022 03:05:08 - INFO - __main__ -   Best top-1 acc: 63.56
+05/12/2022 03:05:08 - INFO - __main__ -   Mean top-1 acc: 39.84
+
+accuracy of model on cifar10 =  0.6128
+agreement of thief and victim =  0.6534
+Train Epoch: 16/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.016s. Batch: 0.120s. Loss: 0.1474. Loss_x: 0.1320. Loss_u: 0.0154. Mask: 0.97. : 100%|█| 1024/1024 [01:57<00:
+Test Iter:  157/ 157. Data: 0.003s. Batch: 0.007s. Loss: 2.1933. top1: 55.46. top5: 94.56. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 125.49it/s]
+05/12/2022 03:07:09 - INFO - __main__ -   top-1 acc: 55.46
+05/12/2022 03:07:09 - INFO - __main__ -   top-5 acc: 94.56
+05/12/2022 03:07:10 - INFO - __main__ -   Best top-1 acc: 63.56
+05/12/2022 03:07:10 - INFO - __main__ -   Mean top-1 acc: 40.82
+
+accuracy of model on cifar10 =  0.588
+agreement of thief and victim =  0.6236
+Train Epoch: 17/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.016s. Batch: 0.120s. Loss: 0.1828. Loss_x: 0.1325. Loss_u: 0.0503. Mask: 0.89. : 100%|█| 1024/1024 [01:57<00:
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.008s. Loss: 1.8732. top1: 60.59. top5: 95.38. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 114.49it/s]
+05/12/2022 03:09:12 - INFO - __main__ -   top-1 acc: 60.59
+05/12/2022 03:09:12 - INFO - __main__ -   top-5 acc: 95.38
+05/12/2022 03:09:13 - INFO - __main__ -   Best top-1 acc: 63.56
+05/12/2022 03:09:13 - INFO - __main__ -   Mean top-1 acc: 41.98
+
+accuracy of model on cifar10 =  0.5901
+agreement of thief and victim =  0.6278
+Train Epoch: 18/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.016s. Batch: 0.121s. Loss: 0.1391. Loss_x: 0.1250. Loss_u: 0.0141. Mask: 0.98. : 100%|█| 1024/1024 [01:57<00:
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.007s. Loss: 1.8256. top1: 62.50. top5: 95.10. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 126.61it/s]
+05/12/2022 03:11:16 - INFO - __main__ -   top-1 acc: 62.50
+05/12/2022 03:11:16 - INFO - __main__ -   top-5 acc: 95.10
+05/12/2022 03:11:17 - INFO - __main__ -   Best top-1 acc: 63.56
+05/12/2022 03:11:17 - INFO - __main__ -   Mean top-1 acc: 43.12
+
+accuracy of model on cifar10 =  0.5912
+agreement of thief and victim =  0.6327
+Train Epoch: 19/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.016s. Batch: 0.120s. Loss: 0.1749. Loss_x: 0.1301. Loss_u: 0.0448. Mask: 0.91. : 100%|█| 1024/1024 [01:56<00:
+Test Iter:  157/ 157. Data: 0.003s. Batch: 0.007s. Loss: 2.0602. top1: 58.52. top5: 92.33. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 133.78it/s]
+05/12/2022 03:13:18 - INFO - __main__ -   top-1 acc: 58.52
+05/12/2022 03:13:18 - INFO - __main__ -   top-5 acc: 92.33
+05/12/2022 03:13:19 - INFO - __main__ -   Best top-1 acc: 63.56
+05/12/2022 03:13:19 - INFO - __main__ -   Mean top-1 acc: 43.93
+
+accuracy of model on cifar10 =  0.5894
+agreement of thief and victim =  0.6272
+Train Epoch: 20/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.016s. Batch: 0.120s. Loss: 0.1371. Loss_x: 0.1230. Loss_u: 0.0140. Mask: 0.96. : 100%|█| 1024/1024 [01:57<00:
+Test Iter:  157/ 157. Data: 0.005s. Batch: 0.008s. Loss: 1.7708. top1: 62.89. top5: 95.76. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 106.95it/s]
+05/12/2022 03:15:22 - INFO - __main__ -   top-1 acc: 62.89
+05/12/2022 03:15:22 - INFO - __main__ -   top-5 acc: 95.76
+05/12/2022 03:15:23 - INFO - __main__ -   Best top-1 acc: 63.56
+05/12/2022 03:15:23 - INFO - __main__ -   Mean top-1 acc: 44.88
+
+accuracy of model on cifar10 =  0.5868
+agreement of thief and victim =  0.6253
+Train Epoch: 21/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.018s. Batch: 0.121s. Loss: 0.1487. Loss_x: 0.1345. Loss_u: 0.0142. Mask: 0.96. : 100%|█| 1024/1024 [01:58<00:
+Test Iter:  157/ 157. Data: 0.005s. Batch: 0.008s. Loss: 1.6953. top1: 62.87. top5: 95.83. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 107.92it/s]
+05/12/2022 03:17:26 - INFO - __main__ -   top-1 acc: 62.87
+05/12/2022 03:17:26 - INFO - __main__ -   top-5 acc: 95.83
+05/12/2022 03:17:27 - INFO - __main__ -   Best top-1 acc: 63.56
+05/12/2022 03:17:27 - INFO - __main__ -   Mean top-1 acc: 47.52
+
+accuracy of model on cifar10 =  0.5939
+agreement of thief and victim =  0.6346
+Train Epoch: 22/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.017s. Batch: 0.121s. Loss: 0.1403. Loss_x: 0.1253. Loss_u: 0.0150. Mask: 0.95. : 100%|█| 1024/1024 [01:57<00:
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.008s. Loss: 1.8721. top1: 60.20. top5: 95.69. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 112.46it/s]
+05/12/2022 03:19:30 - INFO - __main__ -   top-1 acc: 60.20
+05/12/2022 03:19:30 - INFO - __main__ -   top-5 acc: 95.69
+05/12/2022 03:19:31 - INFO - __main__ -   Best top-1 acc: 63.56
+05/12/2022 03:19:31 - INFO - __main__ -   Mean top-1 acc: 50.09
+
+accuracy of model on cifar10 =  0.5881
+agreement of thief and victim =  0.628
+Train Epoch: 23/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.015s. Batch: 0.119s. Loss: 0.1380. Loss_x: 0.1237. Loss_u: 0.0143. Mask: 0.96. : 100%|█| 1024/1024 [01:55<00:
+Test Iter:  157/ 157. Data: 0.005s. Batch: 0.008s. Loss: 1.7953. top1: 61.25. top5: 95.74. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 110.72it/s]
+05/12/2022 03:21:31 - INFO - __main__ -   top-1 acc: 61.25
+05/12/2022 03:21:31 - INFO - __main__ -   top-5 acc: 95.74
+05/12/2022 03:21:32 - INFO - __main__ -   Best top-1 acc: 63.56
+05/12/2022 03:21:32 - INFO - __main__ -   Mean top-1 acc: 52.65
+
+accuracy of model on cifar10 =  0.5869
+agreement of thief and victim =  0.6232
+Train Epoch: 24/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.017s. Batch: 0.121s. Loss: 0.1367. Loss_x: 0.1207. Loss_u: 0.0160. Mask: 0.96. : 100%|█| 1024/1024 [01:58<00:
+Test Iter:  157/ 157. Data: 0.005s. Batch: 0.008s. Loss: 1.7524. top1: 62.25. top5: 95.28. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 104.64it/s]
+05/12/2022 03:23:35 - INFO - __main__ -   top-1 acc: 62.25
+05/12/2022 03:23:35 - INFO - __main__ -   top-5 acc: 95.28
+05/12/2022 03:23:36 - INFO - __main__ -   Best top-1 acc: 63.56
+05/12/2022 03:23:36 - INFO - __main__ -   Mean top-1 acc: 55.27
+
+accuracy of model on cifar10 =  0.564
+agreement of thief and victim =  0.5959
+Train Epoch: 25/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.017s. Batch: 0.121s. Loss: 0.1433. Loss_x: 0.1232. Loss_u: 0.0200. Mask: 0.93. : 100%|█| 1024/1024 [01:57<00:
+Test Iter:  157/ 157. Data: 0.005s. Batch: 0.008s. Loss: 1.8252. top1: 60.89. top5: 95.59. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 108.79it/s]
+05/12/2022 03:25:39 - INFO - __main__ -   top-1 acc: 60.89
+05/12/2022 03:25:39 - INFO - __main__ -   top-5 acc: 95.59
+05/12/2022 03:25:40 - INFO - __main__ -   Best top-1 acc: 63.56
+05/12/2022 03:25:40 - INFO - __main__ -   Mean top-1 acc: 57.25
+
+accuracy of model on cifar10 =  0.5924
+agreement of thief and victim =  0.6266
+Train Epoch: 26/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.016s. Batch: 0.120s. Loss: 0.1392. Loss_x: 0.1210. Loss_u: 0.0182. Mask: 0.92. : 100%|█| 1024/1024 [01:56<00:
+Test Iter:  157/ 157. Data: 0.003s. Batch: 0.007s. Loss: 1.7869. top1: 62.06. top5: 95.43. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 129.44it/s]
+05/12/2022 03:27:42 - INFO - __main__ -   top-1 acc: 62.06
+05/12/2022 03:27:42 - INFO - __main__ -   top-5 acc: 95.43
+05/12/2022 03:27:43 - INFO - __main__ -   Best top-1 acc: 63.56
+05/12/2022 03:27:43 - INFO - __main__ -   Mean top-1 acc: 59.28
+
+accuracy of model on cifar10 =  0.5915
+agreement of thief and victim =  0.629
+Train Epoch: 27/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.016s. Batch: 0.119s. Loss: 0.1526. Loss_x: 0.1283. Loss_u: 0.0243. Mask: 0.92. : 100%|█| 1024/1024 [01:56<00:
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.007s. Loss: 1.6788. top1: 63.51. top5: 96.00. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 121.90it/s]
+05/12/2022 03:29:44 - INFO - __main__ -   top-1 acc: 63.51
+05/12/2022 03:29:44 - INFO - __main__ -   top-5 acc: 96.00
+05/12/2022 03:29:45 - INFO - __main__ -   Best top-1 acc: 63.56
+05/12/2022 03:29:45 - INFO - __main__ -   Mean top-1 acc: 60.49
+
+accuracy of model on cifar10 =  0.5877
+agreement of thief and victim =  0.6276
+Train Epoch: 28/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.015s. Batch: 0.119s. Loss: 0.1922. Loss_x: 0.1178. Loss_u: 0.0744. Mask: 0.82. : 100%|█| 1024/1024 [01:56<00:
+Test Iter:  157/ 157. Data: 0.003s. Batch: 0.007s. Loss: 1.6710. top1: 62.58. top5: 95.44. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 131.18it/s]
+05/12/2022 03:31:46 - INFO - __main__ -   top-1 acc: 62.58
+05/12/2022 03:31:46 - INFO - __main__ -   top-5 acc: 95.44
+05/12/2022 03:31:47 - INFO - __main__ -   Best top-1 acc: 63.56
+05/12/2022 03:31:47 - INFO - __main__ -   Mean top-1 acc: 60.56
+
+accuracy of model on cifar10 =  0.583
+agreement of thief and victim =  0.6253
+Train Epoch: 29/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.015s. Batch: 0.119s. Loss: 0.2613. Loss_x: 0.1246. Loss_u: 0.1367. Mask: 0.64. : 100%|█| 1024/1024 [01:56<00:
+Test Iter:  157/ 157. Data: 0.003s. Batch: 0.007s. Loss: 1.9008. top1: 60.13. top5: 94.61. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 125.01it/s]
+05/12/2022 03:33:47 - INFO - __main__ -   top-1 acc: 60.13
+05/12/2022 03:33:47 - INFO - __main__ -   top-5 acc: 94.61
+05/12/2022 03:33:48 - INFO - __main__ -   Best top-1 acc: 63.56
+05/12/2022 03:33:48 - INFO - __main__ -   Mean top-1 acc: 60.58
+
+accuracy of model on cifar10 =  0.5807
+agreement of thief and victim =  0.6154
+Train Epoch: 30/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.014s. Batch: 0.118s. Loss: 0.2536. Loss_x: 0.1161. Loss_u: 0.1375. Mask: 0.65. : 100%|█| 1024/1024 [01:55<00:
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.007s. Loss: 1.9139. top1: 61.77. top5: 95.61. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 118.37it/s]
+05/12/2022 03:35:47 - INFO - __main__ -   top-1 acc: 61.77
+05/12/2022 03:35:47 - INFO - __main__ -   top-5 acc: 95.61
+05/12/2022 03:35:48 - INFO - __main__ -   Best top-1 acc: 63.56
+05/12/2022 03:35:48 - INFO - __main__ -   Mean top-1 acc: 60.53
+
+accuracy of model on cifar10 =  0.5837
+agreement of thief and victim =  0.6218
+Train Epoch: 31/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.016s. Batch: 0.121s. Loss: 0.2548. Loss_x: 0.1208. Loss_u: 0.1340. Mask: 0.68. : 100%|█| 1024/1024 [01:58<00:
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.007s. Loss: 1.7120. top1: 62.87. top5: 95.78. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 128.60it/s]
+05/12/2022 03:37:51 - INFO - __main__ -   top-1 acc: 62.87
+05/12/2022 03:37:51 - INFO - __main__ -   top-5 acc: 95.78
+05/12/2022 03:37:52 - INFO - __main__ -   Best top-1 acc: 63.56
+05/12/2022 03:37:52 - INFO - __main__ -   Mean top-1 acc: 60.67
+
+accuracy of model on cifar10 =  0.5993
+agreement of thief and victim =  0.6366
+Train Epoch: 32/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.016s. Batch: 0.119s. Loss: 0.2277. Loss_x: 0.1186. Loss_u: 0.1091. Mask: 0.71. : 100%|█| 1024/1024 [01:56<00:
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.007s. Loss: 2.1097. top1: 58.64. top5: 95.23. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 129.13it/s]
+05/12/2022 03:39:53 - INFO - __main__ -   top-1 acc: 58.64
+05/12/2022 03:39:53 - INFO - __main__ -   top-5 acc: 95.23
+05/12/2022 03:39:54 - INFO - __main__ -   Best top-1 acc: 63.56
+05/12/2022 03:39:54 - INFO - __main__ -   Mean top-1 acc: 60.60
+
+accuracy of model on cifar10 =  0.5912
+agreement of thief and victim =  0.6309
+Train Epoch: 33/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.016s. Batch: 0.120s. Loss: 0.2466. Loss_x: 0.1237. Loss_u: 0.1229. Mask: 0.72. : 100%|█| 1024/1024 [01:57<00:
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.007s. Loss: 1.8654. top1: 60.53. top5: 94.57. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 114.34it/s]
+05/12/2022 03:41:56 - INFO - __main__ -   top-1 acc: 60.53
+05/12/2022 03:41:56 - INFO - __main__ -   top-5 acc: 94.57
+05/12/2022 03:41:57 - INFO - __main__ -   Best top-1 acc: 63.56
+05/12/2022 03:41:57 - INFO - __main__ -   Mean top-1 acc: 60.45
+
+accuracy of model on cifar10 =  0.5879
+agreement of thief and victim =  0.6262
+Train Epoch: 34/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.015s. Batch: 0.119s. Loss: 0.2078. Loss_x: 0.1200. Loss_u: 0.0878. Mask: 0.77. : 100%|█| 1024/1024 [01:56<00:
+Test Iter:  157/ 157. Data: 0.003s. Batch: 0.007s. Loss: 1.8116. top1: 62.61. top5: 95.40. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 131.58it/s]
+05/12/2022 03:43:58 - INFO - __main__ -   top-1 acc: 62.61
+05/12/2022 03:43:58 - INFO - __main__ -   top-5 acc: 95.40
+05/12/2022 03:43:59 - INFO - __main__ -   Best top-1 acc: 63.56
+05/12/2022 03:43:59 - INFO - __main__ -   Mean top-1 acc: 60.53
+
+accuracy of model on cifar10 =  0.5905
+agreement of thief and victim =  0.6295
+Train Epoch: 35/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.014s. Batch: 0.118s. Loss: 0.2334. Loss_x: 0.1202. Loss_u: 0.1132. Mask: 0.71. : 100%|█| 1024/1024 [01:55<00:
+Test Iter:  157/ 157. Data: 0.003s. Batch: 0.007s. Loss: 1.7456. top1: 62.11. top5: 95.70. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 133.74it/s]
+05/12/2022 03:45:59 - INFO - __main__ -   top-1 acc: 62.11
+05/12/2022 03:45:59 - INFO - __main__ -   top-5 acc: 95.70
+05/12/2022 03:46:00 - INFO - __main__ -   Best top-1 acc: 63.56
+05/12/2022 03:46:00 - INFO - __main__ -   Mean top-1 acc: 61.21
+
+accuracy of model on cifar10 =  0.605
+agreement of thief and victim =  0.6484
+Train Epoch: 36/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.016s. Batch: 0.120s. Loss: 0.2672. Loss_x: 0.1165. Loss_u: 0.1507. Mask: 0.66. : 100%|█| 1024/1024 [01:57<00:
+Test Iter:  157/ 157. Data: 0.005s. Batch: 0.009s. Loss: 1.7111. top1: 61.72. top5: 94.95. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 102.58it/s]
+05/12/2022 03:48:02 - INFO - __main__ -   top-1 acc: 61.72
+05/12/2022 03:48:02 - INFO - __main__ -   top-5 acc: 94.95
+05/12/2022 03:48:03 - INFO - __main__ -   Best top-1 acc: 63.56
+05/12/2022 03:48:03 - INFO - __main__ -   Mean top-1 acc: 61.52
+
+accuracy of model on cifar10 =  0.5879
+agreement of thief and victim =  0.6253
+Train Epoch: 37/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.015s. Batch: 0.119s. Loss: 0.3055. Loss_x: 0.1137. Loss_u: 0.1919. Mask: 0.56. : 100%|█| 1024/1024 [01:56<00:
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.007s. Loss: 1.8365. top1: 61.21. top5: 95.84. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 125.08it/s]
+05/12/2022 03:50:03 - INFO - __main__ -   top-1 acc: 61.21
+05/12/2022 03:50:03 - INFO - __main__ -   top-5 acc: 95.84
+05/12/2022 03:50:05 - INFO - __main__ -   Best top-1 acc: 63.56
+05/12/2022 03:50:05 - INFO - __main__ -   Mean top-1 acc: 61.56
+
+accuracy of model on cifar10 =  0.6027
+agreement of thief and victim =  0.6423
+Train Epoch: 38/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.016s. Batch: 0.120s. Loss: 0.3335. Loss_x: 0.1158. Loss_u: 0.2177. Mask: 0.51. : 100%|█| 1024/1024 [01:57<00:
+Test Iter:  157/ 157. Data: 0.003s. Batch: 0.007s. Loss: 2.0574. top1: 59.95. top5: 93.32. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 132.75it/s]
+05/12/2022 03:52:06 - INFO - __main__ -   top-1 acc: 59.95
+05/12/2022 03:52:06 - INFO - __main__ -   top-5 acc: 93.32
+05/12/2022 03:52:08 - INFO - __main__ -   Best top-1 acc: 63.56
+05/12/2022 03:52:08 - INFO - __main__ -   Mean top-1 acc: 61.43
+
+accuracy of model on cifar10 =  0.5874
+agreement of thief and victim =  0.6232
+Train Epoch: 39/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.016s. Batch: 0.120s. Loss: 0.3158. Loss_x: 0.1154. Loss_u: 0.2004. Mask: 0.60. : 100%|█| 1024/1024 [01:57<00:
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.007s. Loss: 1.6534. top1: 63.15. top5: 95.18. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 125.55it/s]
+05/12/2022 03:54:10 - INFO - __main__ -   top-1 acc: 63.15
+05/12/2022 03:54:10 - INFO - __main__ -   top-5 acc: 95.18
+05/12/2022 03:54:11 - INFO - __main__ -   Best top-1 acc: 63.56
+05/12/2022 03:54:11 - INFO - __main__ -   Mean top-1 acc: 61.66
+
+accuracy of model on cifar10 =  0.6017
+agreement of thief and victim =  0.6404
+Train Epoch: 40/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.015s. Batch: 0.120s. Loss: 0.3017. Loss_x: 0.1157. Loss_u: 0.1860. Mask: 0.60. : 100%|█| 1024/1024 [01:57<00:
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.007s. Loss: 1.6254. top1: 63.82. top5: 95.20. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 124.87it/s]
+05/12/2022 03:56:12 - INFO - __main__ -   top-1 acc: 63.82
+05/12/2022 03:56:12 - INFO - __main__ -   top-5 acc: 95.20
+05/12/2022 03:56:14 - INFO - __main__ -   Best top-1 acc: 63.82
+05/12/2022 03:56:14 - INFO - __main__ -   Mean top-1 acc: 61.71
+
+accuracy of model on cifar10 =  0.5901
+agreement of thief and victim =  0.6297
+Train Epoch: 41/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.017s. Batch: 0.121s. Loss: 0.3044. Loss_x: 0.1156. Loss_u: 0.1888. Mask: 0.60. : 100%|█| 1024/1024 [01:57<00:
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.008s. Loss: 1.8025. top1: 62.44. top5: 95.43. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 121.97it/s]
+05/12/2022 03:58:16 - INFO - __main__ -   top-1 acc: 62.44
+05/12/2022 03:58:16 - INFO - __main__ -   top-5 acc: 95.43
+05/12/2022 03:58:17 - INFO - __main__ -   Best top-1 acc: 63.82
+05/12/2022 03:58:17 - INFO - __main__ -   Mean top-1 acc: 61.68
+
+accuracy of model on cifar10 =  0.5864
+agreement of thief and victim =  0.6207
+Train Epoch: 42/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.016s. Batch: 0.119s. Loss: 0.3376. Loss_x: 0.1201. Loss_u: 0.2174. Mask: 0.55. : 100%|█| 1024/1024 [01:56<00:
+Test Iter:  157/ 157. Data: 0.003s. Batch: 0.007s. Loss: 1.7475. top1: 63.56. top5: 95.14. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 132.69it/s]
+05/12/2022 04:00:18 - INFO - __main__ -   top-1 acc: 63.56
+05/12/2022 04:00:18 - INFO - __main__ -   top-5 acc: 95.14
+05/12/2022 04:00:19 - INFO - __main__ -   Best top-1 acc: 63.82
+05/12/2022 04:00:19 - INFO - __main__ -   Mean top-1 acc: 61.85
+
+accuracy of model on cifar10 =  0.585
+agreement of thief and victim =  0.6178
+Train Epoch: 43/1024. Iter: 1024/1024. LR: 0.0300. Data: 0.016s. Batch: 0.120s. Loss: 0.3083. Loss_x: 0.1048. Loss_u: 0.2035. Mask: 0.58. : 100%|█| 1024/1024 [01:58<00:
+Test Iter:  157/ 157. Data: 0.003s. Batch: 0.007s. Loss: 1.8259. top1: 62.38. top5: 95.64. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 131.30it/s]
+05/12/2022 04:02:21 - INFO - __main__ -   top-1 acc: 62.38
+05/12/2022 04:02:21 - INFO - __main__ -   top-5 acc: 95.64
+05/12/2022 04:02:22 - INFO - __main__ -   Best top-1 acc: 63.82
+05/12/2022 04:02:22 - INFO - __main__ -   Mean top-1 acc: 61.91
+
+accuracy of model on cifar10 =  0.602
+agreement of thief and victim =  0.6369
+Train Epoch: 44/1024. Iter: 1024/1024. LR: 0.0299. Data: 0.016s. Batch: 0.120s. Loss: 0.3382. Loss_x: 0.1156. Loss_u: 0.2226. Mask: 0.53. : 100%|█| 1024/1024 [01:57<00:
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.007s. Loss: 1.8606. top1: 60.78. top5: 95.31. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 123.02it/s]
+05/12/2022 04:04:24 - INFO - __main__ -   top-1 acc: 60.78
+05/12/2022 04:04:24 - INFO - __main__ -   top-5 acc: 95.31
+05/12/2022 04:04:25 - INFO - __main__ -   Best top-1 acc: 63.82
+05/12/2022 04:04:25 - INFO - __main__ -   Mean top-1 acc: 61.84
+
+accuracy of model on cifar10 =  0.5923
+agreement of thief and victim =  0.6276
+Train Epoch: 45/1024. Iter: 1024/1024. LR: 0.0299. Data: 0.015s. Batch: 0.119s. Loss: 0.3337. Loss_x: 0.1133. Loss_u: 0.2204. Mask: 0.52. : 100%|█| 1024/1024 [01:55<00:
+Test Iter:  157/ 157. Data: 0.003s. Batch: 0.007s. Loss: 1.6883. top1: 63.46. top5: 95.54. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 132.08it/s]
+05/12/2022 04:06:25 - INFO - __main__ -   top-1 acc: 63.46
+05/12/2022 04:06:25 - INFO - __main__ -   top-5 acc: 95.54
+05/12/2022 04:06:26 - INFO - __main__ -   Best top-1 acc: 63.82
+05/12/2022 04:06:26 - INFO - __main__ -   Mean top-1 acc: 61.96
+
+accuracy of model on cifar10 =  0.5968
+agreement of thief and victim =  0.6317
+Train Epoch: 46/1024. Iter: 1024/1024. LR: 0.0299. Data: 0.015s. Batch: 0.119s. Loss: 0.3546. Loss_x: 0.1057. Loss_u: 0.2489. Mask: 0.47. : 100%|█| 1024/1024 [01:56<00:
+Test Iter:  157/ 157. Data: 0.003s. Batch: 0.007s. Loss: 1.8251. top1: 62.42. top5: 95.17. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 124.31it/s]
+05/12/2022 04:08:27 - INFO - __main__ -   top-1 acc: 62.42
+05/12/2022 04:08:27 - INFO - __main__ -   top-5 acc: 95.17
+05/12/2022 04:08:28 - INFO - __main__ -   Best top-1 acc: 63.82
+05/12/2022 04:08:28 - INFO - __main__ -   Mean top-1 acc: 61.98
+
+accuracy of model on cifar10 =  0.5741
+agreement of thief and victim =  0.6015
+Train Epoch: 47/1024. Iter: 1024/1024. LR: 0.0299. Data: 0.015s. Batch: 0.118s. Loss: 0.3816. Loss_x: 0.1068. Loss_u: 0.2748. Mask: 0.45. : 100%|█| 1024/1024 [01:55<00:
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.007s. Loss: 1.6893. top1: 63.34. top5: 96.02. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 125.09it/s]
+05/12/2022 04:10:28 - INFO - __main__ -   top-1 acc: 63.34
+05/12/2022 04:10:28 - INFO - __main__ -   top-5 acc: 96.02
+05/12/2022 04:10:29 - INFO - __main__ -   Best top-1 acc: 63.82
+05/12/2022 04:10:29 - INFO - __main__ -   Mean top-1 acc: 61.97
+
+accuracy of model on cifar10 =  0.5987
+agreement of thief and victim =  0.6353
+Train Epoch: 48/1024. Iter: 1024/1024. LR: 0.0299. Data: 0.014s. Batch: 0.118s. Loss: 0.3923. Loss_x: 0.1096. Loss_u: 0.2827. Mask: 0.45. : 100%|█| 1024/1024 [01:55<00:
+Test Iter:  157/ 157. Data: 0.003s. Batch: 0.007s. Loss: 1.7520. top1: 62.54. top5: 95.72. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 129.72it/s]
+05/12/2022 04:12:29 - INFO - __main__ -   top-1 acc: 62.54
+05/12/2022 04:12:29 - INFO - __main__ -   top-5 acc: 95.72
+05/12/2022 04:12:30 - INFO - __main__ -   Best top-1 acc: 63.82
+05/12/2022 04:12:30 - INFO - __main__ -   Mean top-1 acc: 61.97
+
+accuracy of model on cifar10 =  0.5915
+agreement of thief and victim =  0.6272
+Train Epoch: 49/1024. Iter: 1024/1024. LR: 0.0299. Data: 0.017s. Batch: 0.121s. Loss: 0.3985. Loss_x: 0.1088. Loss_u: 0.2897. Mask: 0.45. : 100%|█| 1024/1024 [01:58<00:
+Test Iter:  157/ 157. Data: 0.003s. Batch: 0.007s. Loss: 1.7310. top1: 63.38. top5: 95.83. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 132.21it/s]
+05/12/2022 04:14:33 - INFO - __main__ -   top-1 acc: 63.38
+05/12/2022 04:14:33 - INFO - __main__ -   top-5 acc: 95.83
+05/12/2022 04:14:34 - INFO - __main__ -   Best top-1 acc: 63.82
+05/12/2022 04:14:34 - INFO - __main__ -   Mean top-1 acc: 62.13
+
+accuracy of model on cifar10 =  0.5978
+agreement of thief and victim =  0.6295
+Train Epoch: 50/1024. Iter: 1024/1024. LR: 0.0299. Data: 0.015s. Batch: 0.119s. Loss: 0.3997. Loss_x: 0.1120. Loss_u: 0.2877. Mask: 0.44. : 100%|█| 1024/1024 [01:56<00:
+Test Iter:  157/ 157. Data: 0.004s. Batch: 0.007s. Loss: 1.6284. top1: 64.73. top5: 95.37. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 126.96it/s]
+05/12/2022 04:16:35 - INFO - __main__ -   top-1 acc: 64.73
+05/12/2022 04:16:35 - INFO - __main__ -   top-5 acc: 95.37
+05/12/2022 04:16:37 - INFO - __main__ -   Best top-1 acc: 64.73
+05/12/2022 04:16:37 - INFO - __main__ -   Mean top-1 acc: 62.28
+
+accuracy of model on cifar10 =  0.6108
+agreement of thief and victim =  0.6473
+Train Epoch: 51/1024. Iter: 1024/1024. LR: 0.0299. Data: 0.018s. Batch: 0.122s. Loss: 0.3872. Loss_x: 0.1052. Loss_u: 0.2820. Mask: 0.45. : 100%|█| 1024/1024 [01:58<00:
+Test Iter:  157/ 157. Data: 0.005s. Batch: 0.009s. Loss: 1.7164. top1: 62.88. top5: 95.37. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 103.21it/s]
+05/12/2022 04:18:40 - INFO - __main__ -   top-1 acc: 62.88
+05/12/2022 04:18:40 - INFO - __main__ -   top-5 acc: 95.37
+05/12/2022 04:18:41 - INFO - __main__ -   Best top-1 acc: 64.73
+05/12/2022 04:18:41 - INFO - __main__ -   Mean top-1 acc: 62.28
+
+accuracy of model on cifar10 =  0.6159
+agreement of thief and victim =  0.6507
+Train Epoch: 52/1024. Iter: 1024/1024. LR: 0.0299. Data: 0.016s. Batch: 0.119s. Loss: 0.4089. Loss_x: 0.1100. Loss_u: 0.2988. Mask: 0.45. : 100%|█| 1024/1024 [01:56<00:
+Test Iter:  157/ 157. Data: 0.005s. Batch: 0.008s. Loss: 1.7025. top1: 63.56. top5: 95.06. : 100%|███████████████████████████████████| 157/157 [00:01<00:00, 109.53it/s]
+05/12/2022 04:20:42 - INFO - __main__ -   top-1 acc: 63.56
+05/12/2022 04:20:42 - INFO - __main__ -   top-5 acc: 95.06
+05/12/2022 04:20:43 - INFO - __main__ -   Best top-1 acc: 64.73
+05/12/2022 04:20:43 - INFO - __main__ -   Mean top-1 acc: 62.53
+
+accuracy of model on cifar10 =  0.607
+agreement of thief and victim =  0.6426
+Train Epoch: 53/1024. Iter:   28/1024. LR: 0.0299. Data: 0.217s. Batch: 0.320s. Loss: 0.3918. Loss_x: 0.1038. Loss_u: 0.2880. Mask: 0.48. :   3%| | 28/1024 [00:03<01:50^CTraceback (most recent call last):
+  File "train.py", line 536, in <module>
+    main()
+  File "train.py", line 297, in main
+    train(args, labeled_trainloader, unlabeled_trainloader, test_loader,
+  File "train.py", line 378, in train
+    losses.update(loss.item())
+KeyboardInterrupt
+Train Epoch: 53/1024. Iter:   28/1024. LR: 0.0299. Data: 0.217s. Batch: 0.320s. Loss: 0.3918. Loss_x: 0.1038. Loss_u: 0.2880. Mask: 0.48. :   3%| | 28/1024 [00:03<02:01
+
+(MSA) aryan_j@user:~/scratch/Fixmatch$ 
+
